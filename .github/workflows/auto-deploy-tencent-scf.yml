@@ -34,7 +34,7 @@ jobs:
         with:
           node-version: 14.x
       - name: install serverless
-        run: npm install -g serverless
+        run: npm install -g serverless-cloud-framework
       - name: deploy serverless
         run: |
           cd ./tencentScf
@@ -45,7 +45,7 @@ jobs:
           chmod +x publish.sh
           ./publish.sh
           echo "开始部署到云函数"
-          sls deploy --force
+          scf deploy --force
         env: # 环境变量
           STAGE: dev #您的部署环境          
           SERVERLESS_PLATFORM_VENDOR: tencent # serverless海外默认为aws部署，配置为腾讯部署
