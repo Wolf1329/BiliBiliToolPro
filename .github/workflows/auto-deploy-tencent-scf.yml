@@ -45,7 +45,6 @@ jobs:
           chmod +x publish.sh
           ./publish.sh
           echo "开始部署到云函数"
-          SLS_GEO_LOCATION=cn serverless deploy
           sls deploy --force
         env: # 环境变量
           STAGE: dev #您的部署环境          
